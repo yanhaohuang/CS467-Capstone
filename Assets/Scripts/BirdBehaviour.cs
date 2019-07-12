@@ -107,13 +107,7 @@ public class BirdBehaviour : MonoBehaviour
                 counterSpeed = 0f;
             }
 
-            // TODO: This code mostly works, but causes the exponential growth bug. Use it for the weekly progress video.
             // Enemies attach on collision
-            //collision.transform.parent = transform;
-            //gameObject.AddComponent<FixedJoint2D>();
-            //gameObject.GetComponent<FixedJoint2D>().connectedBody = collision.rigidbody;
-
-            // TODO: This code is what you should work with
             collision.transform.parent = transform;
             var enemyAttachment = collision.gameObject.AddComponent<FixedJoint2D>();
             enemyAttachment.connectedBody = GetComponent<Rigidbody2D>();
