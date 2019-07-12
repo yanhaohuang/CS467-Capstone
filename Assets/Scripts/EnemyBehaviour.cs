@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class EnemyBehaviour : MonoBehaviour {
 	public float speed = 1f;
@@ -10,7 +11,9 @@ public class EnemyBehaviour : MonoBehaviour {
 	void FixedUpdate () {
 		GetComponent<Rigidbody2D>().AddForce( Vector2.left * speed );
 	}
-	void OnCollisionEnter2D(Collision2D collider) {
-		Destroy (gameObject);
+	void OnCollisionEnter2D(Collision2D collision) {
+
+
+        //Destroy (gameObject);
 	}	
 }
