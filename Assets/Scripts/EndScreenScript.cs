@@ -29,9 +29,11 @@ public class EndScreenScript : MonoBehaviour {
 				audioSource.clip = gameOver;
 				audioSource.loop = true;
 				if (!audioSource.isPlaying) audioSource.Play();
-				GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\n\nTap to Restart";
+				GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart" + "\n\nPress 'M' for Main Menu";
 				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) ) {
 					SceneManager.LoadScene("Scene");
+				} else if( Input.GetKeyDown( KeyCode.M ) ){
+					SceneManager.LoadScene("Menu");
 				}
 			}
 		}
