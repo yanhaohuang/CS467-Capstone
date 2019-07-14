@@ -23,6 +23,6 @@ public class Score : MonoBehaviour {
 			GetComponent<UnityEngine.UI.Text>().enabled = true;
 			GetComponent<UnityEngine.UI.Text> ().text = "Distance: " + score + " ";
 		}
-		if (Time.timeScale == 0) GetComponent<UnityEngine.UI.Text>().enabled = false;
+		if (Time.timeScale == 0 ) GetComponent<UnityEngine.UI.Text>().enabled = false;
 	}
 }

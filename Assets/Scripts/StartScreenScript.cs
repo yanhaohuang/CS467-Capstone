@@ -17,7 +17,7 @@ public class StartScreenScript : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Time.timeScale == 0 && (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0))) {
+		if ( Time.timeScale == 0 && (Input.GetKeyDown (KeyCode.Space)) && !PauseScreen.GamePaused ) {
 			Time.timeScale = 1;
 			GetComponentInChildren<SpriteRenderer> ().enabled = false;
 			GetComponent<Text> ().enabled = false;
