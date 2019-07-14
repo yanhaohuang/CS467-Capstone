@@ -9,14 +9,22 @@ public class PauseScreen : MonoBehaviour
     public GameObject PauseScreenUI;
     public static bool GamePaused = false;
 
+    BirdBehaviour bird;
+
+    void Start()
+    {
+        GameObject player_go = GameObject.FindGameObjectWithTag("Player");
+		bird = player_go.GetComponent<BirdBehaviour>();
+    }
+
     // Update is called once per frame
     void Update()
     {
 
         if( Input.GetKeyDown( KeyCode.Escape ) ){
-            if( GamePaused ){
+            if( GamePaused && !bird.dead ){
                 Resume();
-            } else {
+            } else if( !bird.dead ) {
                 Pause();
             }
         }
