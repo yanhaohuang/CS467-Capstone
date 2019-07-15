@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class PauseScreen : MonoBehaviour
 {
 
-    public GameObject PauseScreenUI;
+    public GameObject PauseScreenOverlay;
     public static bool GamePaused = false;
 
-    BirdBehaviour bird;
+    BirdBehaviour player;
 
     void Start()
     {
         GameObject player_go = GameObject.FindGameObjectWithTag("Player");
-		bird = player_go.GetComponent<BirdBehaviour>();
+		player = player_go.GetComponent<BirdBehaviour>();
     }
 
     // Update is called once per frame
@@ -22,44 +22,62 @@ public class PauseScreen : MonoBehaviour
     {
 
         if( Input.GetKeyDown( KeyCode.Escape ) ){
-            if( GamePaused && !bird.dead ){
+            if( GamePaused && !player.dead ){
                 Resume();
-            } else if( !bird.dead ) {
+            } else if( !player.dead ) {
                 Pause();
             }
         }
         
     }
 
+    /*
+        Click Handler to the "Resume" button in the pause menu
+        If the user presses "Escape" while in the pause menu, or clicks on this button
+        the game returns to playing
+     */
     public void Resume()
     {
-        PauseScreenUI.SetActive( false );
+        PauseScreenOverlay.SetActive( false );
         Time.timeScale = 1f;
         GamePaused = false; 
     }
 
+
+    /*
+        Handles the player pressing "Escape" during the game
+        If the player does, the game pauses and an overlay menu appears
+     */
     public void Pause()
     {
-        PauseScreenUI.SetActive( true );
+        PauseScreenOverlay.SetActive( true );
         Time.timeScale = 0f;
         GamePaused = true;        
 
     }
 
+    /*
+        Click Handler to the "Restart Level" button in the pause menu
+        If the player clicks this element, this click handler fires and the level reloads
+     */
     public void Restart()
     {
 
-        PauseScreenUI.SetActive( false );
+        PauseScreenOverlay.SetActive( false );
         Time.timeScale = 1f;
         GamePaused = false;
         SceneManager.LoadScene( "Scene" );
 
     }
 
+    /*
+        Click Handler to the "Exit to Main Menu" button in the pause menu
+        If the player clicks this element, this click handler fires and the Menu scene loads
+     */
     public void ExitGametoMain()
     {
 
-        PauseScreenUI.SetActive( false );
+        PauseScreenOverlay.SetActive( false );
         Time.timeScale = 1f;
         GamePaused = false;
         SceneManager.LoadScene( "Menu" );
