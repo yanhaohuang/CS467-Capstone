@@ -66,33 +66,12 @@ public class BirdBehaviour : MonoBehaviour
                 counterSpeed = 0f;
             }
 
-            // TODO: Use this for weekly progress report. Talk about refactoring to need to store all the attached enemies to find the proper one to remove.
-            // TODO: Work on this
             // Detach one enemy for every flap
             if (attachedEnemies.Any())
             {
-                // TODO: Also use this in weekly progress report. Attached enemy count was not accurate to the actual number of attached enemies 
-                // and was causing some issues once logic to attach on collision with attached enemy was implemented.
-                Debug.Log("Attached enemies count before flap removal: " + attachedEnemies.Count);
-
                 var mostRecentEnemy = attachedEnemies.OrderByDescending(x => x.index).FirstOrDefault();
-                var allAttachments = GetComponents<FixedJoint2D>();
-                FixedJoint2D enemyAttachment = null;
-                foreach (var attachment in allAttachments)
-                {
-                    var enemy = attachment.connectedBody.gameObject.GetComponent<EnemyBehaviour>();
-                    if (enemy != null && enemy.index == mostRecentEnemy.index)
-                    {
-                        enemyAttachment = attachment;
-                    }
-                }
-                // Remove the joint and decouple from the parent/child relationship
-                //Destroy(enemyAttachment);
-                //mostRecentEnemy.transform.parent = null;
-                //mostRecentEnemy.isConnected = false;
-                //attachedEnemies.Remove(mostRecentEnemy);
-
-                Debug.Log("Attached enemies count after flap removal: " + attachedEnemies.Count);
+                DetachEnemy(mostRecentEnemy);
+                attachedEnemies.Remove(mostRecentEnemy);
             }
 
             didFlap = false;
@@ -139,20 +118,10 @@ public class BirdBehaviour : MonoBehaviour
     {
         Debug.Log("Attached enemies count before attachment add: " + attachedEnemies.Count);
 
-        // TODO: Make this work better when attached enemy collides with other enemy
         collision.transform.parent = gameObject.transform;
         var enemyAttachment = gameObject.AddComponent<FixedJoint2D>();
         enemyAttachment.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
         enemyAttachment.autoConfigureConnectedAnchor = true;
-
-        //Vector2 contactPoint = collision.contacts[0].point;
-        //enemyAttachment.anchor = gameObject.transform.InverseTransformPoint(contactPoint);
-
-        //Vector2 contactPoint = new Vector2(attachedEnemies.Count, attachedEnemies.Count);
-        //enemyAttachment.anchor = gameObject.transform.InverseTransformPoint(contactPoint);
-
-        //Debug.Log("Anchor contact point: " + contactPoint);
-
         enemyAttachment.enableCollision = false;
         enemyAttachment.dampingRatio = 1;
         enemyAttachment.frequency = 0;
@@ -170,9 +139,37 @@ public class BirdBehaviour : MonoBehaviour
 
     public void HandleDeath()
     {
-        if (godMode) return;
+        if (godMode)
+        {
+            return;
+        }
+
+        foreach (var enemy in attachedEnemies)
+        {
+            DetachEnemy(enemy);
+        }
+        attachedEnemies.Clear();
+
         audioSource.PlayOneShot(impact, 1F);
         animator.SetTrigger("Death");
         dead = true;
+    }
+
+    public void DetachEnemy(EnemyBehaviour enemy)
+    {
+        var allAttachments = GetComponents<FixedJoint2D>();
+        FixedJoint2D enemyAttachment = null;
+        foreach (var attachment in allAttachments)
+        {
+            var currEnemy = attachment.connectedBody.gameObject.GetComponent<EnemyBehaviour>();
+            if (currEnemy != null && currEnemy.index == enemy.index)
+            {
+                enemyAttachment = attachment;
+            }
+        }
+        // Remove the joint and decouple from the parent/child relationship
+        Destroy(enemyAttachment);
+        enemy.transform.parent = null;
+        enemy.isConnected = false;
     }
 }
