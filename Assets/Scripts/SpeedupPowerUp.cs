@@ -38,7 +38,7 @@ public class SpeedupPowerUp : MonoBehaviour {
 
         Time.timeScale *= 0.5f;
         yield return new WaitForSeconds(10);
-        Destroy( gameObject );
+        Destroy( gameObject.transform.root.gameObject );
         Debug.Log("Powerup done");
         Time.timeScale = 1f;
 

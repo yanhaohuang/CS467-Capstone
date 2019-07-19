@@ -10,12 +10,14 @@ public class SpawnSpeedupPowerUp : MonoBehaviour {
 	public float spawnDelay = 10f;
 
 	void Start() {  
+		//https://docs.unity3d.com/ScriptReference/MonoBehaviour.InvokeRepeating.html
 		InvokeRepeating("Spawn", spawnTime, spawnDelay);
 	}
 	void Spawn() {  
 		var spawnPoint = new Vector2(transform.position.x, Random.Range(max, min));
 		//https://docs.unity3d.com/ScriptReference/Random.Range.html
 		int rand = Random.Range( 0, 2 );
+		//https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
 		switch (rand)
 		{
 			case 0:

@@ -40,7 +40,7 @@ public class InvincibilityPowerUp : MonoBehaviour {
         Bird = player.GetComponent<BirdBehaviour>();
         Bird.godMode = true;
         yield return new WaitForSeconds(10);
-        Destroy( gameObject );
+        Destroy( gameObject.transform.root.gameObject );
         Bird.godMode = false;
 
     }
