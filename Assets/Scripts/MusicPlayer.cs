@@ -4,12 +4,11 @@ using System.Collections;
 public class MusicPlayer : MonoBehaviour {
 	public AudioClip[] clips;
 	private AudioSource audioSource;
-	public AudioClip gameOver;
-	BirdBehaviour bird;
+	PlayerBehaviour player;
 
 	void Start () {
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
-		bird = player_go.GetComponent<BirdBehaviour>();
+		player = player_go.GetComponent<PlayerBehaviour>();
 		audioSource = GetComponent<AudioSource>();
 		audioSource.loop = false;
 	}
@@ -19,11 +18,11 @@ public class MusicPlayer : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (!audioSource.isPlaying && Time.timeScale == 1 && !bird.dead) {
+		if (!audioSource.isPlaying && Time.timeScale == 1 && !player.dead) {
 			audioSource.clip = GetRandomClip ();
 			audioSource.Play ();
 		}
-		if (bird.dead) {
+		if (player.dead) {
 			audioSource.Stop ();
 		}			
 	}

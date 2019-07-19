@@ -2,23 +2,31 @@
 using System.Collections;
 
 public class SpawnEnemy : MonoBehaviour {
-	public GameObject enemy;
-	public float max = 1.48f;
+	public GameObject[] statics;
+	public GameObject[] enemies;
+	public GameObject[] chasers;
+	public float max0 = 1.65f;
+	public float max1 = 1.55f;
 	public float min = 0.2f;
-    public float max1 = 1.27f;
-	public float spawnTime = 0.65f;
-	public float spawnTime1 = 0.65f;
+	public float time0 = 0.65f;
+	public float time1 = 0.65f;
+	public float time2 = 2f;
 
 	void Start() {  
-		InvokeRepeating("Spawn", spawnTime, spawnTime);
-		InvokeRepeating("Spawn1", spawnTime1, spawnTime1);
+		InvokeRepeating("SpawnStatic", time0, time0);
+		InvokeRepeating("Spawn", time1, time1);
+		InvokeRepeating("SpawnChaser", time2, time2);
 	}
-	void Spawn() {  
+	void SpawnStatic() {  
+		var spawnPoint = new Vector2(transform.position.x, max0);
+		Instantiate(statics[Random.Range(0,statics.Length)], spawnPoint, Quaternion.identity);
+	}
+	void Spawn() {
 		var spawnPoint = new Vector2(transform.position.x, Random.Range(max1, min));
-		Instantiate(enemy, spawnPoint, Quaternion.identity);
-	}
-	void Spawn1() {
-		var spawnPoint1 = new Vector2(transform.position.x, max);
-		Instantiate(enemy, spawnPoint1, Quaternion.identity);
+		Instantiate(enemies[Random.Range(0,enemies.Length)], spawnPoint, Quaternion.identity);
+	}	
+	void SpawnChaser() {
+		var spawnPoint = new Vector2(transform.position.x, Random.Range(max1, min));
+		Instantiate(chasers[Random.Range(0,chasers.Length)], spawnPoint, Quaternion.identity);
 	}	
 }

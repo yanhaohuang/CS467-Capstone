@@ -1,28 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 	public static int score = 0;
 	public static int highScore = 0;
 	public int scale = 1;
-	BirdBehaviour bird;
+	PlayerBehaviour player;
 
 	void Start() {
-		GetComponent<UnityEngine.UI.Text>().enabled = false;
+		GetComponent<Text>().enabled = false;
 		score = 0;
 		highScore = PlayerPrefs.GetInt("highScore", 0);
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
-		bird = player_go.GetComponent<BirdBehaviour>();
+		player = player_go.GetComponent<PlayerBehaviour>();
 	}
 		 
 	void Update () {
-		if (Time.timeScale == 1 && !bird.dead) {
+		if (Time.timeScale == 1 && !player.dead) {
 			score = Mathf.RoundToInt(GameObject.FindGameObjectWithTag("Player").transform.position.x)*scale;   
 			if(score > highScore) highScore = score;
 			PlayerPrefs.SetInt("highScore", highScore);
-			GetComponent<UnityEngine.UI.Text>().enabled = true;
-			GetComponent<UnityEngine.UI.Text> ().text = "Distance: " + score + " ";
+			GetComponent<Text>().enabled = true;
+			GetComponent<Text> ().text = "Distance: " + score + " ";
 		}
-		if (Time.timeScale == 0) GetComponent<UnityEngine.UI.Text>().enabled = false;
+		if (Time.timeScale == 0) GetComponent<Text>().enabled = false;
 	}
 }

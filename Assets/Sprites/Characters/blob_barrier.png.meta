@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: d089c355f483143f48b47b7d3580ec81
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1703336403317215922
+    second: blob_barrier_0
+  - first:
+      213: -7846640870976782596
+    second: blob_barrier_1
+  - first:
+      213: 8663936460627818365
+    second: blob_barrier_2
+  - first:
+      213: -4704202611167849226
+    second: blob_barrier_3
+  - first:
+      213: 2662024316808148167
+    second: blob_barrier_4
+  - first:
+      213: -8671195912801942790
+    second: blob_barrier_5
+  - first:
+      213: -4511665838007146758
+    second: blob_barrier_6
+  - first:
+      213: -7731818113539070788
+    second: blob_barrier_7
+  - first:
+      213: 5948564442585699570
+    second: blob_barrier_8
+  - first:
+      213: 8597545157122962492
+    second: blob_barrier_9
+  - first:
+      213: -757168996146842715
+    second: blob_barrier_10
+  - first:
+      213: -5784367579360103519
+    second: blob_barrier_11
+  - first:
+      213: 4669320003260964899
+    second: blob_barrier_12
+  - first:
+      213: -4209327492537774672
+    second: blob_barrier_13
+  - first:
+      213: -4009162249508384058
+    second: blob_barrier_14
+  - first:
+      213: 5804096662101170987
+    second: blob_barrier_15
+  - first:
+      213: -837478041934957588
+    second: blob_barrier_16
+  - first:
+      213: -3289194514892178191
+    second: blob_barrier_17
+  - first:
+      213: -764198260013056610
+    second: blob_barrier_18
+  - first:
+      213: -53023681044584270
+    second: blob_barrier_19
+  - first:
+      213: 6653038230175372853
+    second: blob_barrier_20
+  - first:
+      213: -1469866397017055248
+    second: blob_barrier_21
+  - first:
+      213: -3117299899103242853
+    second: blob_barrier_22
+  - first:
+      213: -2864089576033632005
+    second: blob_barrier_23
+  - first:
+      213: -96045334236139360
+    second: blob_barrier_24
+  - first:
+      213: -2137051822849180544
+    second: blob_barrier_25
+  - first:
+      213: 5431746153443424872
+    second: blob_barrier_26
+  - first:
+      213: 7186297574462621728
+    second: blob_barrier_27
+  - first:
+      213: 3185879984892163955
+    second: blob_barrier_28
+  - first:
+      213: -1020046667565065667
+    second: blob_barrier_29
+  - first:
+      213: -2251776802157040304
+    second: blob_barrier_30
+  - first:
+      213: -1418452551049113221
+    second: blob_barrier_31
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blob_barrier_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 10
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99cb6f4751014131ace6b6794541fef
+      internalID: -1703336403317215922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 10
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1168889fdf54b40d58dd37cd67493ff1
+      internalID: -7846640870976782596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 10
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4892539b26914631b69674189cd6aed
+      internalID: 8663936460627818365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 10
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032ba87a3048e44be865309e457cad31
+      internalID: -4704202611167849226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_4
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 9
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f71132fd36e94c0eb585a789e711d4b
+      internalID: 2662024316808148167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_5
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 8
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18074dc89eaf14dca9b700351f2a3709
+      internalID: -8671195912801942790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 7
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5e6ee2da3f3451e806c14999797f38
+      internalID: -4511665838007146758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_7
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 8
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d663e9db4beb44052ba8b11aee352d1d
+      internalID: -7731818113539070788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_8
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 7
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dcbdbe3a6d348ac852d74f7e2480ac
+      internalID: 5948564442585699570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_9
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 6
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5e10a9989f345039ae40c58a0fb948
+      internalID: 8597545157122962492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_10
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 5
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b021bf8661d6048c084a10bd2bc8aecd
+      internalID: -757168996146842715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_11
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 5
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549c6dfce19e84295872aa9691344d2d
+      internalID: -5784367579360103519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_12
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 5
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae1e6f181b8c42cd98f9af568f33bee
+      internalID: 4669320003260964899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_13
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 6
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0dd31883da94420993275423585cb6
+      internalID: -4209327492537774672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_14
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 8
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f07df87af95425a9889e6691152a21
+      internalID: -4009162249508384058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_15
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 10
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729f39b4198484e84941e3c42f9ca064
+      internalID: 5804096662101170987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_16
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 10
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fdf42737b114f11a43bd81490f8d7b
+      internalID: -837478041934957588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_17
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 10
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d101973d5f7446b09e895706b523461
+      internalID: -3289194514892178191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_18
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 9
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bb7bae00a3e49feb847a89e92653d5
+      internalID: -764198260013056610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_19
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 7
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e6873660adc4b0da4fd35aaf786a22
+      internalID: -53023681044584270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_20
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 6
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbb592a2ed3b4417afaefdcf120d9c3
+      internalID: 6653038230175372853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_21
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 5
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d020bd97123b4257b6dff8b0d4f18eb
+      internalID: -1469866397017055248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_22
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 5
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a745ead599f421ab88f128dc641e3d
+      internalID: -3117299899103242853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_23
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 6
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b500c2f74ecf34dff8cc95c0591f9d1f
+      internalID: -2864089576033632005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_24
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 7
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e43a6705f9be4574a17478a4f533f8a
+      internalID: -96045334236139360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_25
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 8
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45428f2fbb3d45b4b8e566b3269ef08
+      internalID: -2137051822849180544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_26
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 9
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe41296feb5b0429693620fb3b41ebf9
+      internalID: 5431746153443424872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_27
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 11
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0f2d4913639465f89645832011d8b5
+      internalID: 7186297574462621728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_28
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 12
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137df957e53e646bca4369abe9f30f68
+      internalID: 3185879984892163955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_29
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 12
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80fb6e774f3a44e488c9473cf7514ab9
+      internalID: -1020046667565065667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_30
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 12
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd45a9042d8014f16b708b2660a08da5
+      internalID: -2251776802157040304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blob_barrier_31
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 10
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97ab0b7665ac49ae91b79d04a9b0e3e
+      internalID: -1418452551049113221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

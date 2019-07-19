@@ -7,7 +7,7 @@ public class EndScreenScript : MonoBehaviour {
 	public AudioClip gameOver;
 	AudioSource audioSource;
 
-	BirdBehaviour bird;
+	PlayerBehaviour player;
 	public float deathCooldown = 2f;
 
 	static int score;
@@ -17,11 +17,11 @@ public class EndScreenScript : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 		GetComponent<Text> ().enabled = false;
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
-		bird = player_go.GetComponent<BirdBehaviour>();
+		player = player_go.GetComponent<PlayerBehaviour>();
 	}
 	
 	void Update () {
-		if (bird.dead) {			
+		if (player.dead) {			
 			deathCooldown -= Time.deltaTime;
 			if (deathCooldown <= 0f) {
 				Time.timeScale = 0;

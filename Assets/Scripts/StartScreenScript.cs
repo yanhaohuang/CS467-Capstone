@@ -8,7 +8,7 @@ public class StartScreenScript : MonoBehaviour {
 	AudioSource audioSource;
 	void Start () {
 		Time.timeScale = 0;
-		GetComponentInChildren<SpriteRenderer>().enabled = true;
+		GetComponentInChildren<Image>().enabled = true;
 		GetComponent<Text>().enabled = true;
 		audioSource = GetComponent<AudioSource>();
 		audioSource.clip = menuMusic;
@@ -19,7 +19,7 @@ public class StartScreenScript : MonoBehaviour {
 	void Update () {
 		if (Time.timeScale == 0 && (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0))) {
 			Time.timeScale = 1;
-			GetComponentInChildren<SpriteRenderer> ().enabled = false;
+			GetComponentInChildren<Image> ().enabled = false;
 			GetComponent<Text> ().enabled = false;
 			audioSource.Stop ();
 		}
