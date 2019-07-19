@@ -61,8 +61,8 @@ public class BirdBehaviour : MonoBehaviour
             audioSource.PlayOneShot(whoosh, 0.8F);
             if (GetComponent<Rigidbody2D>().mass >= 1.04f)
             {
-                counter = loseSize;
-                counterMass = loseMass;
+                //counter = loseSize;
+                //counterMass = loseMass;
                 GetComponent<Rigidbody2D>().mass -= counterMass;
                 transform.localScale -= new Vector3(counter, counter, counter);
                 counterMass = 0f;
