@@ -93,6 +93,7 @@ public class BirdBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            if (godMode) return;
             audioSource.PlayOneShot(splat, 0.7F);
             counter = gainSize;
             counterMass = gainMass;

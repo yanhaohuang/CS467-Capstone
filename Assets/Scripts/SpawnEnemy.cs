@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour {
 
 	void Start() {  
 		InvokeRepeating("Spawn", spawnTime, spawnTime);
-		InvokeRepeating("Spawn1", spawnTime1, spawnTime1);
+		//InvokeRepeating("Spawn1", spawnTime1, spawnTime1);
 	}
 	void Spawn() {  
 		var spawnPoint = new Vector2(transform.position.x, Random.Range(max1, min));

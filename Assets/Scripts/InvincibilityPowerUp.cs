@@ -1,10 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System;
 
-public class SpeedupPowerUp : MonoBehaviour {
+public class InvincibilityPowerUp : MonoBehaviour {
 
     private IEnumerator coroutine;
+    private BirdBehaviour Bird;
 
     void Update () {
 		// Check for game being paused before we delete the enemies
@@ -26,7 +27,7 @@ public class SpeedupPowerUp : MonoBehaviour {
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
 
-            coroutine = CountDown();
+            coroutine = CountDown( collision );
 
             StartCoroutine(coroutine);
 
@@ -34,13 +35,13 @@ public class SpeedupPowerUp : MonoBehaviour {
 
     }
 
-    private IEnumerator CountDown(){
+    private IEnumerator CountDown( Collider2D player ){
 
-        Time.timeScale *= 0.5f;
+        Bird = player.GetComponent<BirdBehaviour>();
+        Bird.godMode = true;
         yield return new WaitForSeconds(10);
         Destroy( gameObject );
-        Debug.Log("Powerup done");
-        Time.timeScale = 1f;
+        Bird.godMode = false;
 
     }
 }
