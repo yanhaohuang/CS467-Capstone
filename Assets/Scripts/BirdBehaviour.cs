@@ -21,8 +21,8 @@ public class BirdBehaviour : MonoBehaviour
     public float loseMass = 0.04f;
     public float loseSpeed = 1f;
 
-    private float counter = 0f;
-    private float counterMass = 0f;
+    public float counter = 0f;
+    public float counterMass = 0f;
     private float counterSpeed = 0f;
 
     bool didFlap = false;

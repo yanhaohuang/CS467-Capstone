@@ -8,7 +8,13 @@ public class InvincibilityPowerUp : PowerUp
     protected override void powerUpEffect( BirdBehaviour player )
     {
         base.powerUpEffect( player );
-        player.GetComponent<Rigidbody2D>().mass = 1.0f;
+        player.godMode = true;
+    }
+
+    protected override void removePowerUpEffect( BirdBehaviour player )
+    {
+        base.removePowerUpEffect( player );
+        player.godMode = false;
     }
 
 }

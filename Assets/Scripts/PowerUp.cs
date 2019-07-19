@@ -31,8 +31,6 @@ public class PowerUp : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
 
-            Debug.Log("Hello");
-
             if( expiresOnTime )
             {
                 coroutine = CountDown( Bird );
@@ -40,6 +38,7 @@ public class PowerUp : MonoBehaviour
             }
             else 
             {
+                powerUpEffect( Bird );
                 Destroy( gameObject.transform.root.gameObject );
             }
 
