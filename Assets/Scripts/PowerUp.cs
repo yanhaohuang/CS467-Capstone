@@ -11,6 +11,7 @@ public class PowerUp : MonoBehaviour
     public BirdBehaviour Bird;
 
     public bool expiresOnTime;
+    public bool destoryable = false;
     private IEnumerator coroutine;
 
     void Update () {
@@ -42,7 +43,6 @@ public class PowerUp : MonoBehaviour
             else 
             {
                 powerUpEffect( Bird );
-                Destroy( gameObject.transform.root.gameObject );
             }
 
         } 
@@ -60,7 +60,11 @@ public class PowerUp : MonoBehaviour
 
     protected virtual void removePowerUpEffect( BirdBehaviour player )
     {
-        Debug.Log( "Removed" );
+        if( destoryable && !expiresOnTime )
+        {
+            Destroy( gameObject.transform.root.gameObject );
+            Debug.Log( "Got it" );
+        }
     }
 
     protected virtual void doSpecialEffects( )
