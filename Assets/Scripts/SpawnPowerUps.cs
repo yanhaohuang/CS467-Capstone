@@ -22,13 +22,13 @@ public class SpawnPowerUps : MonoBehaviour {
 		switch (rand)
 		{
 			case 0:
-				Instantiate(HealthPowerUp, spawnPoint, Quaternion.identity);
+				Instantiate(SpeedPowerUp, spawnPoint, Quaternion.identity);
 				break;
 			case 1:
-				Instantiate(HealthPowerUp, spawnPoint, Quaternion.identity);
+				Instantiate(SpeedPowerUp, spawnPoint, Quaternion.identity);
 				break;
 			case 2:
-				Instantiate(HealthPowerUp, spawnPoint, Quaternion.identity);
+				Instantiate(SpeedPowerUp, spawnPoint, Quaternion.identity);
 				break;
 			default:
 				break;

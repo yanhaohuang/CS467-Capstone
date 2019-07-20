@@ -5,7 +5,8 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public string powerUpName;
-    public GameObject soundfx;
+    
+    public AudioClip soundclip;
 
     public BirdBehaviour Bird;
 
@@ -30,6 +31,8 @@ public class PowerUp : MonoBehaviour
 
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
+
+            doSpecialEffects();
 
             if( expiresOnTime )
             {
@@ -58,6 +61,12 @@ public class PowerUp : MonoBehaviour
     protected virtual void removePowerUpEffect( BirdBehaviour player )
     {
         Debug.Log( "Removed" );
+    }
+
+    protected virtual void doSpecialEffects( )
+    {
+       AudioSource soundfx = gameObject.GetComponent<AudioSource>();
+       soundfx.PlayOneShot(soundclip, 1.0f);
     }
 
     protected virtual IEnumerator CountDown( BirdBehaviour player )
