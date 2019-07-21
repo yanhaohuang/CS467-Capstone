@@ -10,15 +10,15 @@ public class RangeDestructPowerUp : PowerUp
 
     private void Update ()
     {
-            if (Input.GetKeyDown ("f"))
+        if (Input.GetKeyDown ("f"))
+        {
+            RangeDestruct();
+            canShoot--;
+            if (canShoot <= 0)
             {
-                RangeDestruct();
-                canShoot--;
-                if (canShoot <= 0)
-                {
-                    removePowerUpEffect ( Bird );
-                }
+                removePowerUpEffect ( Bird );
             }
+        }
     }
 
     void RangeDestruct()

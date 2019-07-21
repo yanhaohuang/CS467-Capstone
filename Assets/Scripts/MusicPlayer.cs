@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class MusicPlayer : MonoBehaviour {
 	public AudioClip[] clips;
 	private AudioSource audioSource;
 	public AudioClip gameOver;
 	BirdBehaviour bird;
+
+	public AudioMixer audioMixer;
 
 	void Start () {
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
@@ -19,8 +22,10 @@ public class MusicPlayer : MonoBehaviour {
 	}
 	
 	void Update () {
+		AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
 		if (!audioSource.isPlaying && Time.timeScale == 1 && !bird.dead) {
 			audioSource.clip = GetRandomClip ();
+			audioSource.outputAudioMixerGroup = audioMixGroup[0];
 			audioSource.Play ();
 		}
 		if (bird.dead) {

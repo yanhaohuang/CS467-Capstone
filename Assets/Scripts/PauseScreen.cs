@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class PauseScreen : MonoBehaviour
 {
 
     public GameObject PauseScreenOverlay;
+    public AudioMixer mixer;
     public static bool GamePaused = false;
 
     BirdBehaviour player;
@@ -20,7 +24,6 @@ public class PauseScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if( Input.GetKeyDown( KeyCode.Escape ) ){
             if( GamePaused && !player.dead ){
                 Resume();
@@ -74,13 +77,16 @@ public class PauseScreen : MonoBehaviour
         Click Handler to the "Exit to Main Menu" button in the pause menu
         If the player clicks this element, this click handler fires and the Menu scene loads
      */
-    public void ExitGametoMain()
+    public void ExitGame()
     {
 
-        PauseScreenOverlay.SetActive( false );
-        Time.timeScale = 1f;
-        GamePaused = false;
-        SceneManager.LoadScene( "Menu" );
+        Debug.Log("We are quitting. Comment this out as we build.");
+        Application.Quit();
 
+    }
+
+    public void UpdateVolume( float volume )
+    {
+        mixer.SetFloat( "mainVolume", volume );
     }
 }
