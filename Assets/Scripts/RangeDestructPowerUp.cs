@@ -26,6 +26,7 @@ public class RangeDestructPowerUp : PowerUp
 
     /*
         Locate all game objects in the scene, only target those that are in a range, then destroy them.
+        Leaned on the Unity documentation to make this work https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html
      */
     void RangeDestruct()
     {
