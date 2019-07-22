@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
     
     public AudioClip soundclip;
 
-    public BirdBehaviour Bird;
+    public BirdBehaviour Ship;
 
     public bool expiresOnTime;
     public bool destoryable = false;
@@ -21,6 +21,11 @@ public class PowerUp : MonoBehaviour
             Destroy(gameObject);
         }
 	}
+
+    /*
+        When a player hits a powerup, disable the visible/interactable components of the powerup
+        and apply the powerup either immediately or over the course of time.
+     */
     protected virtual void OnTriggerEnter2D( Collider2D other )
     {
 
@@ -28,7 +33,7 @@ public class PowerUp : MonoBehaviour
         if( other.gameObject.tag == "Player" )
         {
 
-            Bird = other.GetComponent<BirdBehaviour>();
+            Ship = other.GetComponent<BirdBehaviour>();
 
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
@@ -37,12 +42,12 @@ public class PowerUp : MonoBehaviour
 
             if( expiresOnTime )
             {
-                coroutine = CountDown( Bird );
+                coroutine = CountDown( Ship );
                 StartCoroutine(coroutine);
             }
             else 
             {
-                powerUpEffect( Bird );
+                powerUpEffect( Ship );
             }
 
         } 
@@ -53,11 +58,17 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    /*
+        Kind of a stub function - the specific powerup classes do most of this work
+     */
     protected virtual void powerUpEffect( BirdBehaviour player )
     {
         Debug.Log( "Added" );
     }
 
+    /*
+        Destroy the powerup
+     */
     protected virtual void removePowerUpEffect( BirdBehaviour player )
     {
         if( destoryable && !expiresOnTime )
@@ -67,19 +78,26 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    /*
+        Play an audio clip when hitting a powerup
+     */
     protected virtual void doSpecialEffects( )
     {
        AudioSource soundfx = gameObject.GetComponent<AudioSource>();
        soundfx.PlayOneShot(soundclip, 1.0f);
     }
 
+    /*
+        If the powerup is one that should work over a period of time then we 
+        call the effect, wait for 10 seconds, destroy the game object and remove the powerup effect if needed
+     */
     protected virtual IEnumerator CountDown( BirdBehaviour player )
     {
 
         powerUpEffect( player );
         yield return new WaitForSeconds(10);
-        Destroy( gameObject.transform.root.gameObject );
         removePowerUpEffect( player );
+        Destroy( gameObject.transform.root.gameObject );
 
     }
 }

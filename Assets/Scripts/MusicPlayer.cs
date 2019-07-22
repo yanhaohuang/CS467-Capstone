@@ -8,6 +8,7 @@ public class MusicPlayer : MonoBehaviour {
 	public AudioClip gameOver;
 	BirdBehaviour bird;
 
+	// Need to add the master mixer here and in the component view as well
 	public AudioMixer audioMixer;
 
 	void Start () {
@@ -22,9 +23,11 @@ public class MusicPlayer : MonoBehaviour {
 	}
 	
 	void Update () {
+		// Getting the master mixer
 		AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
 		if (!audioSource.isPlaying && Time.timeScale == 1 && !bird.dead) {
 			audioSource.clip = GetRandomClip ();
+			// Routing the playing of the audio clips through the main mixer
 			audioSource.outputAudioMixerGroup = audioMixGroup[0];
 			audioSource.Play ();
 		}

@@ -11,10 +11,17 @@ public class SpawnPowerUps : MonoBehaviour {
 	public float spawnTime = 1f;
 	public float spawnDelay = 10f;
 
+	/*
+		Every 10 seconds call the Spawn() function
+	 */
 	void Start() {  
 		//https://docs.unity3d.com/ScriptReference/MonoBehaviour.InvokeRepeating.html
 		InvokeRepeating("Spawn", spawnTime, spawnDelay);
 	}
+
+	/*
+		Instantiate a powerup randomly. 
+	 */
 	void Spawn() {  
 		var spawnPoint = new Vector2(transform.position.x, Random.Range(max, min));
 		//https://docs.unity3d.com/ScriptReference/Random.Range.html

@@ -84,7 +84,11 @@ public class PauseScreen : MonoBehaviour
         Application.Quit();
 
     }
-
+    /*
+        Click Handler to the "Quit" button in the main menu
+        If the player clicks this element, the application closes. 
+        Since we don't have the application built yet, this won't work
+     */
     public void UpdateVolume( float volume )
     {
         mixer.SetFloat( "mainVolume", volume );

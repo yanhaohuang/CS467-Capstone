@@ -8,6 +8,9 @@ public class RangeDestructPowerUp : PowerUp
 
     public int canShoot;
 
+    /*
+        The player can fire this effect manually using the 'f' key
+     */
     private void Update ()
     {
         if (Input.GetKeyDown ("f"))
@@ -16,11 +19,14 @@ public class RangeDestructPowerUp : PowerUp
             canShoot--;
             if (canShoot <= 0)
             {
-                removePowerUpEffect ( Bird );
+                removePowerUpEffect ( Ship );
             }
         }
     }
 
+    /*
+        Locate all game objects in the scene, only target those that are in a range, then destroy them.
+     */
     void RangeDestruct()
     {
         GameObject[] AllSpawnedEnemies;
@@ -45,6 +51,9 @@ public class RangeDestructPowerUp : PowerUp
 
     }
 
+    /*
+        Set some variables when the player picks this up
+     */
     protected override void powerUpEffect( BirdBehaviour player )
     {
         base.powerUpEffect( player );
@@ -52,6 +61,9 @@ public class RangeDestructPowerUp : PowerUp
         canShoot = 1;
     }
 
+    /*
+        After the player has fired this, then destroy it.
+     */
     protected override void removePowerUpEffect( BirdBehaviour player )
     {
         destoryable = true;

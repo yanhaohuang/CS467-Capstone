@@ -18,8 +18,10 @@ public class EndScreenScript : MonoBehaviour {
 	PauseScreen pause;
 
 	void Start () {
+		// Load up the audio mixer
 		AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
 		audioSource = GetComponent<AudioSource>();
+		// play the audio clips through the master mixer
 		audioSource.outputAudioMixerGroup = audioMixGroup[0];
 		GetComponent<Text> ().enabled = false;
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
@@ -28,6 +30,7 @@ public class EndScreenScript : MonoBehaviour {
 	
 	void Update () {
 		if (bird.dead) {
+			// Pull in our pause screen script so we can call a method in it
 			pause = GameObject.FindObjectOfType(typeof(PauseScreen)) as PauseScreen;			
 			deathCooldown -= Time.deltaTime;
 			if (deathCooldown <= 0f) {
@@ -40,6 +43,7 @@ public class EndScreenScript : MonoBehaviour {
 				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !PauseScreen.GamePaused ) {
 					SceneManager.LoadScene("Scene");
 				} else if( Input.GetKeyDown( KeyCode.M ) ){
+					// Call our pause method from the pause screen script
 					pause.Pause();
 				}
 			}
