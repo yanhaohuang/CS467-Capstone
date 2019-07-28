@@ -11,11 +11,18 @@ public class ChaserBehaviour : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // TODO: The direction of the force should change depending on where the Chaser is in relation to the Player
-        GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed);
-        // TODO: Chase player here
-        // TODO: Use this code to show first step of this working, but that it needs improvement
         Transform playerTransform = FindObjectOfType<PlayerBehaviour>().transform;
+        
+        // The facing should change depending on where the Chaser is in relation to the Player
+        if (playerTransform.position.x < transform.position.x)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+
         var step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, step);
     }
