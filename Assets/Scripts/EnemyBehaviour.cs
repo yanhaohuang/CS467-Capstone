@@ -14,7 +14,6 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D collision) {
 
-        // TODO: Only destroy if the collision is not on the player?
-        //Destroy (gameObject);
+        Destroy (gameObject);
 	}	
 }

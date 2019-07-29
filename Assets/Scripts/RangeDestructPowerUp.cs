@@ -3,23 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class RangeDestructPowerUp : PowerUp 
+public class RangeDestructPowerUp : PowerUp
 {
-
     public int canShoot;
 
     /*
         The player can fire this effect manually using the 'f' key
      */
-    private void Update ()
+    private void Update()
     {
-        if (Input.GetKeyDown ("f"))
+        if (Input.GetKeyDown("f"))
         {
+            Debug.Log("RangeDestructPowerup called");
+            var playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<BirdBehaviour>();
+            playerBehavior.ToggleWeaponAnimation();
             RangeDestruct();
             canShoot--;
             if (canShoot <= 0)
             {
-                removePowerUpEffect ( Ship );
+                removePowerUpEffect(Ship);
             }
         }
     }
@@ -30,45 +32,47 @@ public class RangeDestructPowerUp : PowerUp
      */
     void RangeDestruct()
     {
-        GameObject[] AllSpawnedEnemies;
-        List<GameObject> EnemiesToDestruct = new List<GameObject>();
-        AllSpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float distance = 10f;
+        // TODO: Call animatorSetTrigger on player
+        GameObject[] allSpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> enemiesToDestruct = new List<GameObject>();
+        float maxRange = 100f;
         Vector3 position = transform.position;
-        foreach (GameObject go in AllSpawnedEnemies)
+        foreach (GameObject possibleTargets in allSpawnedEnemies)
         {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            Vector3 diff = possibleTargets.transform.position - position;
+            float targetRange = diff.sqrMagnitude;
+            Debug.Log("targetRange: " + targetRange);
+            if (targetRange < maxRange)
             {
-                EnemiesToDestruct.Add( go );
+                enemiesToDestruct.Add(possibleTargets);
             }
         }
 
-        foreach (GameObject go in EnemiesToDestruct )
+        foreach (GameObject go in enemiesToDestruct)
         {
-            Destroy( go );
+            Debug.Log("ENEMY DESTROYED");
+            Destroy(go);
         }
-
     }
 
     /*
         Set some variables when the player picks this up
      */
-    protected override void powerUpEffect( BirdBehaviour player )
+    protected override void powerUpEffect(BirdBehaviour player)
     {
-        base.powerUpEffect( player );
-        destoryable = false;
+        Debug.Log("RangeDestructPowerup powerup effect entered");
+        base.powerUpEffect(player);
+        destroyable = false;
         canShoot = 1;
     }
 
     /*
         After the player has fired this, then destroy it.
      */
-    protected override void removePowerUpEffect( BirdBehaviour player )
+    protected override void removePowerUpEffect(BirdBehaviour player)
     {
-        destoryable = true;
-        base.removePowerUpEffect( player );
+        destroyable = true;
+        base.removePowerUpEffect(player);
     }
 
 }

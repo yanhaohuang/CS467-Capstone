@@ -121,4 +121,9 @@ public class BirdBehaviour : MonoBehaviour
             dead = true;
         }
     }
+
+    public void ToggleWeaponAnimation()
+    {
+        animator.SetTrigger("Weapon");
+    }
 }
