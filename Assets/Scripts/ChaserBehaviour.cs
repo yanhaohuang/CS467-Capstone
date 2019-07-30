@@ -12,7 +12,7 @@ public class ChaserBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         Transform playerTransform = FindObjectOfType<PlayerBehaviour>().transform;
-        
+
         // The facing should change depending on where the Chaser is in relation to the Player
         if (playerTransform.position.x < transform.position.x)
         {
