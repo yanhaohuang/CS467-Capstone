@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ca8e8299fd384b47846101b2d51ef0b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - jump: {fileID: 8300000, guid: d3d53044464c64e789fee52850e5b7b0, type: 3}
+  - absorb: {fileID: 8300000, guid: f8a2756183da74a389edc55247789bd9, type: 3}
+  - squish: {fileID: 8300000, guid: 0820c8e8471c847749561ba33d16b496, type: 3}
+  - powerup: {fileID: 8300000, guid: ed0370d8bcfde4e408b2db6bf8a889d8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
