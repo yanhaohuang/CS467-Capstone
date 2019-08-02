@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class PlayerBehaviour : MonoBehaviour {
 	public static int score = 0;
@@ -35,8 +36,15 @@ public class PlayerBehaviour : MonoBehaviour {
 	public AudioClip powerup;
 	AudioSource audioSource;
 
+	// Our audio mixer
+	public AudioMixer audioMixer;
+
 	void Start () {
+		// Getting the master mixer
+		AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
 		audioSource = GetComponent<AudioSource>();
+		// And make sure we play through the proper mixer
+		audioSource.outputAudioMixerGroup = audioMixGroup[0];
 		animator = transform.GetComponentInChildren<Animator>();
 	}
 
@@ -80,13 +88,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.tag == "Powerup") {
-			Destroy (collision.gameObject);
-			audioSource.PlayOneShot(powerup, 1F);
-		}
 		if (collision.gameObject.tag == "Enemy") {
-			Destroy (collision.gameObject);
 			if (godMode) return;
+			Destroy (collision.gameObject);
 			audioSource.PlayOneShot(absorb, 1F);
 			counter = gainSize;
 			counterMass = gainMass;
@@ -105,5 +109,11 @@ public class PlayerBehaviour : MonoBehaviour {
 			animator.SetTrigger("Death");
 			dead = true;
 		}
+	}
+
+	// Sets the animiation of our player - used primarily in the PowerUpBase and classes that inherit from that
+	public void setAnimation( string animationKeyword )
+	{
+		animator.SetTrigger( animationKeyword );
 	}
 }
