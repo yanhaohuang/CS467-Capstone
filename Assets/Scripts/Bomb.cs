@@ -6,6 +6,7 @@ using System;
 public class Bomb : PowerUpBase 
 {
 
+    public GameObject explosion;
     /*
         Locate all game objects in the scene, only target those that are in a range, then destroy them.
         Leaned on the Unity documentation to make this work https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html
@@ -41,6 +42,7 @@ public class Bomb : PowerUpBase
         // Then loop over and destroy the enemy
         foreach (GameObject go in EnemiesToDestruct )
         {
+            Instantiate(explosion, go.transform.position, go.transform.rotation);
             Destroy( go );
         }
 
