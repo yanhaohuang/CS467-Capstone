@@ -33,13 +33,13 @@ public class SpawnPowerup : MonoBehaviour {
 				Instantiate(Bomb, spawnPoint, Quaternion.identity);
 				break;
 			case 1:
-				Instantiate(Barrier, spawnPoint, Quaternion.identity);
+				Instantiate(Bomb, spawnPoint, Quaternion.identity);
 				break;
 			case 2:
-				Instantiate(Boost, spawnPoint, Quaternion.identity);
+				Instantiate(Bomb, spawnPoint, Quaternion.identity);
 				break;
 			case 3:
-				Instantiate(Health, spawnPoint, Quaternion.identity);
+				Instantiate(Bomb, spawnPoint, Quaternion.identity);
 				break;
 			default:
 				break;

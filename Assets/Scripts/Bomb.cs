@@ -5,7 +5,8 @@ using System;
 
 public class Bomb : PowerUpBase 
 {
-
+    // The explosion prefab that we need access to
+    // Add this in the Unity editor as well
     public GameObject explosion;
     /*
         Locate all game objects in the scene, only target those that are in a range, then destroy them.
@@ -42,6 +43,7 @@ public class Bomb : PowerUpBase
         // Then loop over and destroy the enemy
         foreach (GameObject go in EnemiesToDestruct )
         {
+            // Find the game object (our enemies) and add an explosion at their position
             Instantiate(explosion, go.transform.position, go.transform.rotation);
             Destroy( go );
         }
