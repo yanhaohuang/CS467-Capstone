@@ -55,17 +55,13 @@ public class EndScreenScript : MonoBehaviour {
 					// Remove the Pause button from this screen
 					GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
 					PauseButton.GetComponent<Image>().enabled = false;
-					GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart" + "\n\nPress 'M' for Menu";
+					GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart";
 				} else{
 					// Clear our text
 					GetComponent<Text>().enabled = false;
 				}
 				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !PauseScreen.GamePaused ) {
 					SceneManager.LoadScene("Scene");
-				} else if( Input.GetKeyDown( KeyCode.M ) ){
-					// Call our pause method from the pause screen script
-					// So we can load our menu
-					pause.Pause();
 				}
 		
 			}
