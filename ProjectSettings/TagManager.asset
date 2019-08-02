@@ -8,6 +8,7 @@ TagManager:
   - Powerup
   - Ground
   - Ceiling
+  - GameUI
   layers:
   - Default
   - TransparentFX

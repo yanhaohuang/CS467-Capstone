@@ -52,6 +52,9 @@ public class EndScreenScript : MonoBehaviour {
 				// Added in the ability to access the menu from the end screen
 				// If the game is paused, then we don't want to show the end screen text
 				if( !PauseScreen.GamePaused ){
+					// Remove the Pause button from this screen
+					GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
+					PauseButton.GetComponent<Image>().enabled = false;
 					GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart" + "\n\nPress 'M' for Menu";
 				} else{
 					// Clear our text

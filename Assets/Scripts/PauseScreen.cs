@@ -44,6 +44,9 @@ public class PauseScreen : MonoBehaviour
         PauseScreenOverlay.SetActive( false );
         Time.timeScale = 1f;
         GamePaused = false; 
+        // Bring the pause button back
+        GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
+        PauseButton.GetComponent<Image>().enabled = true;
     }
 
 
@@ -55,7 +58,10 @@ public class PauseScreen : MonoBehaviour
     {
         PauseScreenOverlay.SetActive( true );
         Time.timeScale = 0f;
-        GamePaused = true;        
+        GamePaused = true; 
+        // Remove the Pause button from this screen
+        GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
+        PauseButton.GetComponent<Image>().enabled = false;	       
 
     }
 
