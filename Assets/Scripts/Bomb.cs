@@ -39,12 +39,11 @@ public class Bomb : PowerUpBase
                 EnemiesToDestruct.Add( go );
             }
         }
-
+        Instantiate(explosion, transform.position, transform.rotation);
         // Then loop over and destroy the enemy
         foreach (GameObject go in EnemiesToDestruct )
         {
             // Find the game object (our enemies) and add an explosion at their position
-            Instantiate(explosion, go.transform.position, go.transform.rotation);
             Destroy( go );
         }
 

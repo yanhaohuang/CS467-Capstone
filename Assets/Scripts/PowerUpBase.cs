@@ -114,7 +114,7 @@ public class PowerUpBase : MonoBehaviour
     {
 
         powerUpEffect( player );
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
         removePowerUpEffect( player );
         Destroy( gameObject.transform.root.gameObject );
 

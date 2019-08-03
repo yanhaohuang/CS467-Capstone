@@ -5791,8 +5791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boost: {fileID: 3199276023442808166, guid: aace3ddca47ce49eb86a063754b53fc5, type: 3}
   Barrier: {fileID: 6927485263674107203, guid: 0e18555b2429d470da3b6e433a0c9496, type: 3}
-  Bomb: {fileID: 5558905801063862821, guid: 2610a5cb456d54f0ab663f5df8abb618, type: 3}
-  Health: {fileID: 8530890690489674944, guid: b462c07a21fde4733aa4cad0fe13be03, type: 3}
+  Bomb: {fileID: 8530890690489674944, guid: b462c07a21fde4733aa4cad0fe13be03, type: 3}
+  Health: {fileID: 5558905801063862821, guid: 2610a5cb456d54f0ab663f5df8abb618, type: 3}
   min: 0.2
   max: 1.45
   spawnTime: 1
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   min: 0.2
   time0: 0.65
   time1: 0.65
-  time2: 2
+  time2: 3.5
 --- !u!50 &1438462757
 Rigidbody2D:
   serializedVersion: 4
@@ -9886,7 +9886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1782483003
 RectTransform:
   m_ObjectHideFlags: 0

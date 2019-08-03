@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChaserBehaviour : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 1.5f;
     void start() { }
     void Update()
     {

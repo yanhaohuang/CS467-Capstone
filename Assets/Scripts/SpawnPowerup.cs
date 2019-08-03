@@ -9,11 +9,10 @@ public class SpawnPowerup : MonoBehaviour {
 	public float min = 0.2f;
     public float max = 1.48f;
 	public float spawnTime = 1f;
-	public float spawnDelay = 8f;
+	public float spawnDelay = 10f;
 
 	/*
-		Create a powerup in random space every 8 seconds.
-		I played around with timing a bit, 10 seconds is too much, 7 seems to make the gamplay easier.
+		Create a powerup in random space every 10 seconds.
 	 */
 	void Start() {  
 		//https://docs.unity3d.com/ScriptReference/MonoBehaviour.InvokeRepeating.html
@@ -33,13 +32,13 @@ public class SpawnPowerup : MonoBehaviour {
 				Instantiate(Bomb, spawnPoint, Quaternion.identity);
 				break;
 			case 1:
-				Instantiate(Bomb, spawnPoint, Quaternion.identity);
+				Instantiate(Barrier, spawnPoint, Quaternion.identity);
 				break;
 			case 2:
-				Instantiate(Bomb, spawnPoint, Quaternion.identity);
+				Instantiate(Boost, spawnPoint, Quaternion.identity);
 				break;
 			case 3:
-				Instantiate(Bomb, spawnPoint, Quaternion.identity);
+				Instantiate(Health, spawnPoint, Quaternion.identity);
 				break;
 			default:
 				break;

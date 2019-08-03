@@ -11,6 +11,8 @@ public class Boost : PowerUpBase
     protected override void powerUpEffect( PlayerBehaviour player )
     {
         base.powerUpEffect( player );
+        player.transform.localScale = new Vector3( 1, 1, 1 );
+        player.GetComponent<Rigidbody2D> ().mass = 1;
         Time.timeScale *= 0.5f;
     }
 
