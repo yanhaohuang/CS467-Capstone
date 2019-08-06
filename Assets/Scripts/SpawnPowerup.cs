@@ -6,7 +6,9 @@ public class SpawnPowerup : MonoBehaviour {
 	public GameObject Barrier;
 	public GameObject Bomb;
 	public GameObject Health;
-	public float min = 0.2f;
+    public GameObject Weapon;
+
+    public float min = 0.2f;
     public float max = 1.48f;
 	public float spawnTime = 1f;
 	public float spawnDelay = 10f;
@@ -23,7 +25,7 @@ public class SpawnPowerup : MonoBehaviour {
 		var spawnPoint = new Vector2(transform.position.x, Random.Range(max, min));
 		//https://docs.unity3d.com/ScriptReference/Random.Range.html
 		// generate a random number
-		int rand = Random.Range( 0, 4 );
+		int rand = Random.Range( 0, 5 );
 		//https://docs.unity3d.com/ScriptReference/Object.Instantiate.html
 		// based on the point and random number, instantiate one of the four powerups
 		switch (rand)
@@ -40,7 +42,10 @@ public class SpawnPowerup : MonoBehaviour {
 			case 3:
 				Instantiate(Health, spawnPoint, Quaternion.identity);
 				break;
-			default:
+            case 4:
+                Instantiate(Weapon, spawnPoint, Quaternion.identity);
+                break;
+            default:
 				break;
 		}
 	}
