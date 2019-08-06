@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6290478028158578933}
   - component: {fileID: 6290478028158578932}
   - component: {fileID: 6290478028158578935}
+  - component: {fileID: 4093749009459389046}
   m_Layer: 12
   m_Name: weapon
   m_TagString: Powerup
@@ -119,3 +120,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!114 &4093749009459389046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6290478028158578934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c776e2f0784949046a57e2defe8ee6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpName: Weapon
+  soundclip: {fileID: 8300000, guid: ed0370d8bcfde4e408b2db6bf8a889d8, type: 3}
+  audioMixer: {fileID: 24100000, guid: 3ce93fcc2cc8b44efb0d88a99998ec0c, type: 2}
+  player: {fileID: 0}
+  expiresOnTime: 1
+  destoryable: 0

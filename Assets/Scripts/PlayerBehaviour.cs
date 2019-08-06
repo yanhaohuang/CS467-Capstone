@@ -29,6 +29,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	Animator animator;
 	public bool dead = false;
 	public bool godMode = false;
+    public bool hasWeapon = false;
 
 	public AudioClip jump;
 	public AudioClip absorb;
@@ -38,6 +39,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	// Our audio mixer
 	public AudioMixer audioMixer;
+
+    public GameObject weaponShot;
+    public Transform weaponShotSpawn;
 
 	void Start () {
 		// Getting the master mixer
@@ -75,6 +79,10 @@ public class PlayerBehaviour : MonoBehaviour {
 				forwardSpeed += counterSpeed;
 				counterSpeed = 0f;
 			}
+            if (hasWeapon)
+            {
+                Instantiate(weaponShot, weaponShotSpawn.position, weaponShotSpawn.rotation);
+            }
 			didJump = false;
 		}
 
