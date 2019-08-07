@@ -9,7 +9,8 @@ public class WeaponShotBehaviour : MonoBehaviour
     void Start()
     {
         if (Time.timeScale == 0 && !PauseScreen.GamePaused) Destroy(gameObject);
-        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+        // Set the forward transformation on this only so that we don't have to worry about working with the y-axis
+        GetComponent<Rigidbody2D>().velocity = transform.forward * speed;
     }
 
     void Update()
@@ -22,6 +23,8 @@ public class WeaponShotBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        // Speed the projectile up based on the current speed of the projectile and forward speed of the player
+        GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(Vector2.right * (speed + FindObjectOfType<PlayerBehaviour>().forwardSpeed));
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -32,6 +35,11 @@ public class WeaponShotBehaviour : MonoBehaviour
             Destroy(collision.gameObject);
             // Destroy weapon shot object
             Destroy(gameObject);
+        }
+        // Make it so that we don't have to deal with so many projectiles floating around
+        if( collision.gameObject.tag == "Ceiling" || collision.gameObject.tag == "Ground" )
+        {
+            Destroy( gameObject ); 
         }
     }
 }

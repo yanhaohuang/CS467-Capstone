@@ -81,7 +81,8 @@ public class PlayerBehaviour : MonoBehaviour {
 			}
             if (hasWeapon)
             {
-                Instantiate(weaponShot, weaponShotSpawn.position, weaponShotSpawn.rotation);
+				// Changed the rotation on this so that the weapon always fires out
+                Instantiate(weaponShot, weaponShotSpawn.position, Quaternion.identity);
             }
 			didJump = false;
 		}
