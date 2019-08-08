@@ -22,15 +22,15 @@ public class EndScreenScript : MonoBehaviour {
 	PauseScreen pause;
 
 	void Start () {
-		// Load up the audio mixer
+		// Load up the audio mixer, get the clip, and play it
 		AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
-
 		audioSource = GetComponent<AudioSource>();
-
-		// play the audio clips through the master mixer
 		audioSource.outputAudioMixerGroup = audioMixGroup[0];
 
+		// Clear the end-screen text until it's needed
 		GetComponent<Text> ().enabled = false;
+
+		// Get the player object in the scene
 		GameObject player_go = GameObject.FindGameObjectWithTag("Player");
 		player = player_go.GetComponent<PlayerBehaviour>();
 	}
@@ -41,25 +41,21 @@ public class EndScreenScript : MonoBehaviour {
 			// Pull in our pause screen script so we can call a method in it
 			pause = GameObject.FindObjectOfType(typeof(PauseScreen)) as PauseScreen;	
 
+			// Wait past the player's death for a short period and then
 			deathCooldown -= Time.deltaTime;
 			if (deathCooldown <= 0f) {
 				Time.timeScale = 0;
+
+				// Show our end screen text and play the ending music
 				GetComponent<Text>().enabled = true;
 				audioSource.clip = gameOver;
 				audioSource.loop = true;
 				if (!audioSource.isPlaying) audioSource.Play();
 
-				// Added in the ability to access the menu from the end screen
-				// If the game is paused, then we don't want to show the end screen text
-				if( !PauseScreen.GamePaused ){
-					// Remove the Pause button from this screen
-					GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
-					PauseButton.GetComponent<Image>().enabled = false;
-					GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart";
-				} else{
-					// Clear our text
-					GetComponent<Text>().enabled = false;
-				}
+				GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
+				PauseButton.GetComponent<Image>().enabled = false;
+				GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart";
+
 				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !PauseScreen.GamePaused ) {
 					SceneManager.LoadScene("Scene");
 				}

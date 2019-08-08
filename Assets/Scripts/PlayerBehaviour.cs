@@ -3,16 +3,19 @@ using System.Collections;
 using UnityEngine.Audio;
 
 public class PlayerBehaviour : MonoBehaviour {
+
+	// Player variables for score
 	public static int score = 0;
 	public int scale = 1;
 	public static int maxScore = 99999999;
 
+	// Player variables for speed
 	public float jumpSpeed    = 175f;
 	public float forwardSpeed = 1f;
 	public float maxSpeed = 25f;
 
 	private CircleCollider2D myCollider;
-
+	// Player variables for managing size, mass, and speed of the player
 	public float gainSize = 1f;
 	public float gainMass = 0.2f;
 	public float gainSpeed = 0.2f;
@@ -25,23 +28,28 @@ public class PlayerBehaviour : MonoBehaviour {
 	private float counterMass = 0f; 
 	private float counterSpeed = 0f;
 
+	// Is the player jumping?
 	bool didJump = false;
-	Animator animator;
+	// Is the player dead?
 	public bool dead = false;
+
+	// Player class variables for powerups
 	public bool godMode = false;
     public bool hasWeapon = false;
+    public GameObject weaponShot;
+    public Transform weaponShotSpawn;
 
+	// Animator for managing player's animations
+	Animator animator;
+
+	// Sound management variables (effects, changing of clips, etc)
+	public AudioMixer audioMixer;
 	public AudioClip jump;
 	public AudioClip absorb;
 	public AudioClip squish;
 	public AudioClip powerup;
 	AudioSource audioSource;
 
-	// Our audio mixer
-	public AudioMixer audioMixer;
-
-    public GameObject weaponShot;
-    public Transform weaponShotSpawn;
 
 	void Start () {
 		// Getting the master mixer

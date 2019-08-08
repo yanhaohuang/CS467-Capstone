@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	void Update () {
 		if (Time.timeScale == 0 && !PauseScreen.GamePaused ) Destroy(gameObject);
 	}
+	// Move the enemy at a fixed rate of speed in the opposite direction as the player
 	void FixedUpdate () {
 		GetComponent<Rigidbody2D>().AddForce( Vector2.left * speed );
 	}

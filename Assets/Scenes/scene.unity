@@ -4615,6 +4615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseScreenOverlay: {fileID: 779002617}
   mixer: {fileID: 24100000, guid: 3ce93fcc2cc8b44efb0d88a99998ec0c, type: 2}
+  slider: {fileID: 1300326228}
 --- !u!114 &1013673692
 MonoBehaviour:
   m_ObjectHideFlags: 0

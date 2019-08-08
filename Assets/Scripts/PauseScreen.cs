@@ -15,8 +15,12 @@ public class PauseScreen : MonoBehaviour
 
     PlayerBehaviour player;
 
+    public Slider slider;
+
     void Start()
     {
+        // Set the slider based on the player's preferences
+        slider.value = PlayerPrefs.GetFloat("mainVolume", 0.75f);
         GameObject player_go = GameObject.FindGameObjectWithTag("Player");
 		player = player_go.GetComponent<PlayerBehaviour>();
     }
@@ -97,6 +101,8 @@ public class PauseScreen : MonoBehaviour
      */
     public void UpdateVolume( float volume )
     {
+        // Set the mixer volume and the volume for the player's prefernces
         mixer.SetFloat( "mainVolume", volume );
+        PlayerPrefs.SetFloat("mainVolume", volume);
     }
 }

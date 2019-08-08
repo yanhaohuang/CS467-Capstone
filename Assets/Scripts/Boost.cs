@@ -6,7 +6,7 @@ public class Boost : PowerUpBase
 {
 
     /*
-        Slow time down by 50%
+        Slow time down by 50% and reset the player's size so they can enjoy the ride
      */
     protected override void powerUpEffect( PlayerBehaviour player )
     {

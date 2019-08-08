@@ -8,13 +8,19 @@ public class WeaponShotBehaviour : MonoBehaviour
 
     void Start()
     {
-        if (Time.timeScale == 0 && !PauseScreen.GamePaused) Destroy(gameObject);
+        
         // Set the forward transformation on this only so that we don't have to worry about working with the y-axis
         GetComponent<Rigidbody2D>().velocity = transform.forward * speed;
     }
 
     void Update()
     {
+
+        // If time is 0 and we're not in the pause screen, destroy all instances of this object
+        if (Time.timeScale == 0 && !PauseScreen.GamePaused)
+        {
+            Destroy(gameObject);
+        }
         // Destroy the shot if it gets too far away
         Transform playerTransform = FindObjectOfType<PlayerBehaviour>().transform;
         float distance = transform.position.x - playerTransform.position.x;
