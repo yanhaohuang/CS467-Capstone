@@ -1,10 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WeaponShotBehaviour : MonoBehaviour
 {
     public float speed;
+    public GameObject explosion;
+    public AudioClip explosionSound;
+    public AudioMixer audioMixer;
 
     void Start()
     {
@@ -15,7 +20,6 @@ public class WeaponShotBehaviour : MonoBehaviour
 
     void Update()
     {
-
         // If time is 0 and we're not in the pause screen, destroy all instances of this object
         if (Time.timeScale == 0 && !PauseScreen.GamePaused)
         {
@@ -23,9 +27,9 @@ public class WeaponShotBehaviour : MonoBehaviour
         }
         // Destroy the shot if it gets too far away
         Transform playerTransform = FindObjectOfType<PlayerBehaviour>().transform;
-        float distance = transform.position.x - playerTransform.position.x;
+        float distance = Math.Abs(transform.position.x - playerTransform.position.x);
         Debug.Log("Distance: " + distance);
-        if (distance > 10)
+        if (distance > 5)
         {
             Destroy(gameObject);
         }
@@ -37,8 +41,19 @@ public class WeaponShotBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            // Add an explosion effect
+            Instantiate(explosion, collision.transform.position, collision.transform.rotation);
+
+            // Getting the master mixer
+            AudioMixerGroup[] audioMixGroup = audioMixer.FindMatchingGroups("Master");
+            AudioSource soundfx = gameObject.GetComponent<AudioSource>();
+            soundfx.outputAudioMixerGroup = audioMixGroup[0];
+            // Play explosion sound effect
+            soundfx.PlayOneShot(explosionSound, 1.0f);
+
             // Destroy enemy on contact
             Destroy(collision.gameObject);
+
             // Destroy weapon shot object
             Destroy(gameObject);
         }

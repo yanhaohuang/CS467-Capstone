@@ -48,8 +48,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public AudioClip absorb;
 	public AudioClip squish;
 	public AudioClip powerup;
-	AudioSource audioSource;
-
+    public AudioClip fireWeapon;
+    AudioSource audioSource;
 
 	void Start () {
 		// Getting the master mixer
@@ -91,8 +91,9 @@ public class PlayerBehaviour : MonoBehaviour {
             {
 				// Changed the rotation on this so that the weapon always fires out
                 Instantiate(weaponShot, weaponShotSpawn.position, Quaternion.identity);
+                audioSource.PlayOneShot(fireWeapon, 1F);
             }
-			didJump = false;
+            didJump = false;
 		}
 
 		if (GetComponent<Rigidbody2D>().velocity.y > 0) {
