@@ -19,8 +19,11 @@ public class PauseScreen : MonoBehaviour
 
     void Start()
     {
-        // Set the slider based on the player's preferences
-        slider.value = PlayerPrefs.GetFloat("mainVolume", 0.75f);
+        if( PlayerPrefs.HasKey( "mainVolume " ) )
+        {
+            // Set the slider based on the player's preferences
+            slider.value = PlayerPrefs.GetFloat("mainVolume", 0.75f);
+        }
         GameObject player_go = GameObject.FindGameObjectWithTag("Player");
 		player = player_go.GetComponent<PlayerBehaviour>();
     }

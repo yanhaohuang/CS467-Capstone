@@ -2,12 +2,15 @@
 using System.Collections;
 
 public class SpawnPowerup : MonoBehaviour {
+
+	// Powerup game objects - associated with these variables in the Unity editor
 	public GameObject Boost;
 	public GameObject Barrier;
 	public GameObject Bomb;
 	public GameObject Health;
     public GameObject Weapon;
 
+	// Location and time variables for instantiation location
     public float min = 0.2f;
     public float max = 1.48f;
 	public float spawnTime = 1f;

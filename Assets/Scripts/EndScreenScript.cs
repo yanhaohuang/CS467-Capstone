@@ -52,10 +52,14 @@ public class EndScreenScript : MonoBehaviour {
 				audioSource.loop = true;
 				if (!audioSource.isPlaying) audioSource.Play();
 
+				// Kick the pause button off the screen
 				GameObject PauseButton = GameObject.FindGameObjectWithTag("GameUI");
 				PauseButton.GetComponent<Image>().enabled = false;
+
+				// And show our score
 				GetComponent<Text>().text = "Distance: " + Score.score + "\nBest Distance: " + Score.highScore +"\n\nTap to Restart";
 
+				// If the player starts tapping, then reload the scene and start again
 				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !PauseScreen.GamePaused ) {
 					SceneManager.LoadScene("Scene");
 				}
